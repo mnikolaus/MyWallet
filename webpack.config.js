@@ -8,7 +8,7 @@ module.exports = {
   entry: ['babel-polyfill', './src/index.jsx'],
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'docs')
+    path: path.resolve(__dirname, './')
   },
   watch: !isProduction,
   resolve: {
