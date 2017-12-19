@@ -1,0 +1,49 @@
+.table {
+  .currency {
+    margin-left: 15px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+  }
+
+  table {
+    width: 100%;
+    text-align: right;
+    font-size: 18px;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-collapse: collapse;
+
+    tr {
+      td {
+        padding: 15px;
+        border: 1px solid #eee;
+        width: 50%;
+      }
+    }
+    tfoot {
+      tr {
+        background: #fafafa;
+
+        &.label {
+          td {
+            background: #555;
+            color: #fff;
+            font-size: 12px;
+            padding: 5px 15px;
+            text-transform: uppercase;
+          }
+        }
+
+        &.total {
+          font-weight: 600;
+          color: #fff;
+
+          .currency {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}

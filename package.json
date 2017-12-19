@@ -1,0 +1,40 @@
+{
+  "name": "crypto-invest",
+  "version": "1.0.0",
+  "description": "Track all of your cryptocurrencies and their value in real currency.",
+  "main": "public/index.js",
+  "scripts": {
+    "test": "npm run test",
+    "develop": "NODE_ENV=development node_modules/.bin/webpack --progress --config webpack.config.js",
+    "production": "NODE_ENV=production node_modules/.bin/webpack --progress --config webpack.config.js"
+  },
+  "author": "Mario Nikolaus",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "css-loader": "^0.28.7",
+    "eslint": "^4.13.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.5.1",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.1",
+    "webpack": "^3.10.0"
+  },
+  "dependencies": {
+    "numeral": "^2.0.6",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-select": "^1.1.0"
+  }
+}

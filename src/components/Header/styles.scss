@@ -1,0 +1,23 @@
+header.main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 0 3px rgba(100, 100, 100, 0.3);
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 12px;
+
+  .left {
+    float: left;
+
+    h1 {
+      margin: 5px;
+    }
+  }
+
+  .right {
+    float: right;
+  }
+}

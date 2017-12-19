@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  padding: 100px 0 0 0;
+  font-family: 'Montserrat', sans-serif;
+  background: #fafafa;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  &.small {
+    max-width: 400px;
+  }
+}
+
+button.edit {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  background: #eee;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: 0;
+  opacity: 0.5;
+  transition: 0.2s all ease-in-out;
+
+  &:hover {
+    opacity: 1;
+  }
+}
