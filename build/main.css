@@ -437,6 +437,7 @@
     -webkit-transform: rotate(1turn); } }
 header.main {
   position: fixed;
+  z-index: 50;
   top: 0;
   left: 0;
   width: 100%;
@@ -491,7 +492,8 @@ header.main {
   background: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
-  align-items: flex-start; }
+  align-items: flex-start;
+  overflow-y: scroll; }
   .popup-container .popup {
     background: #fff;
     width: 400px;
