@@ -5,7 +5,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
-  entry: ['babel-polyfill', './src/index.jsx'],
+  entry: ['whatwg-fetch', 'babel-polyfill', './src/index.jsx'],
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'build')
@@ -51,7 +51,7 @@ module.exports = {
       }
     }),
     new webpack.optimize.UglifyJsPlugin(),
-    new ExtractTextPlugin('./main.css')
+    new ExtractTextPlugin('./main.css'),
   ],
   devtool: (isProduction) ? 'source-map' : 'eval',
 }
