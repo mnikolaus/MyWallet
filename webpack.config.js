@@ -50,6 +50,7 @@ module.exports = {
          'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
       }
     }),
+    new webpack.optimize.UglifyJsPlugin(),
     new ExtractTextPlugin('./main.css')
   ],
   devtool: (isProduction) ? 'source-map' : 'eval',
