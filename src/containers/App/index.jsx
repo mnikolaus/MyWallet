@@ -10,7 +10,6 @@ const calculateStuff = (list, rates, defaultCurrency, invested) => {
   let sum = 0;
   const newList = list.map((item) => {
     const newAmount = Number(parseFloat(item.amount) * rates[item.currency][defaultCurrency]).toFixed(2); // eslint-disable-line max-len
-    // debugger; //eslint-disable-line no-debugger
     sum += parseFloat(newAmount);
     return Object.assign({}, item, {
       changedAmount: newAmount,
@@ -44,13 +43,15 @@ class App extends Component {
   componentDidMount() {
     if (!this.state.currencyList) {
       api.getCryptoList().then((result) => {
-        this.setState({ currencyList: result.Data });
+        this.setState({ currencyList: result, loading: '' });
+      }).then(() => {
+
       });
-    }
-    if (this.state.userList) {
+    } else if (this.state.userList) {
       this.getExchangeRates(this.state.userList, this.state.currency);
+    } else {
+      this.setState({ loading: '' }); // eslint-disable-line
     }
-    this.setState({ loading: '' }); // eslint-disable-line 
   }
 
   componentDidUpdate() {
