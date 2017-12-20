@@ -5,7 +5,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
-  entry: ['whatwg-fetch', 'babel-polyfill', './src/index.jsx'],
+  entry: ['babel-polyfill', 'whatwg-fetch', './src/index.jsx'],
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'build')
