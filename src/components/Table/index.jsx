@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import numeral from 'numeral';
 import './styles.scss';
 
-const Table = ({ data }) => (
+const Table = ({ data, openPrompt }) => (
   <div className="container small">
     <div className="table">
       <table>
@@ -31,7 +31,9 @@ const Table = ({ data }) => (
             </td>
           </tr>
           <tr>
-            <td>
+            { /* eslint-disable */}
+            <td onClick={openPrompt} style={{ cursor: 'pointer' }}>
+            { /* eslint-enable */}
               {numeral(data.invested.toFixed(2)).format('0.00 a')} <span className="currency">{data.defaultCurrency}</span>
             </td>
             <td>
@@ -58,6 +60,7 @@ Table.propTypes = {
     list: PropTypes.array,
     defaultCurrency: PropTypes.string,
   }).isRequired,
+  openPrompt: PropTypes.func.isRequired,
 };
 
 export default Table;

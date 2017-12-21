@@ -3,6 +3,7 @@ import Loader from '../../components/Loader';
 import Header from '../../components/Header';
 import Table from '../../components/Table';
 import Popup from '../../components/Popup';
+import Prompt from '../../components/Prompt';
 import api from './actions';
 import '../../styles/globals.scss';
 
@@ -37,6 +38,7 @@ class App extends Component {
     };
     this.handleCurrencyChange = this.handleCurrencyChange.bind(this);
     this.handleUserListChange = this.handleUserListChange.bind(this);
+    this.handleInvestedChange = this.handleInvestedChange.bind(this);
     this.getExchangeRates = this.getExchangeRates.bind(this);
   }
 
@@ -91,6 +93,14 @@ class App extends Component {
     localStorage.setItem('userList', JSON.stringify(newList));
   }
 
+  handleInvestedChange(invested) {
+    this.setState({
+      invested,
+      prompt: false,
+    });
+    localStorage.setItem('invested', invested);
+  }
+
   render() {
     const {
       currency,
@@ -99,6 +109,7 @@ class App extends Component {
       invested,
       loading,
       popup,
+      prompt,
       userList,
     } = this.state;
 
@@ -124,6 +135,7 @@ class App extends Component {
               data={
                 calculateStuff(userList, exchangeRates, currency, invested)
               }
+              openPrompt={() => this.setState({ prompt: true })}
             />
           }
           {
@@ -138,6 +150,14 @@ class App extends Component {
             userList={userList}
             onCancel={() => this.setState({ popup: false })}
             onSave={this.handleUserListChange}
+          />
+        }
+        {
+          prompt &&
+          <Prompt
+            invested={invested}
+            onCancel={() => this.setState({ prompt: false })}
+            onSave={this.handleInvestedChange}
           />
         }
       </section>
