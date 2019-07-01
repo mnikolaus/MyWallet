@@ -11,6 +11,7 @@ import '../../styles/globals.scss';
 const calculateStuff = (list, rates, defaultCurrency, invested) => {
   let sum = 0;
   const newList = list.map((item) => {
+    debugger;
     const newAmount = get(rates, '[item.currency]') ? Number(parseFloat(item.amount) * rates[item.currency][defaultCurrency]).toFixed(2) : 0; // eslint-disable-line max-len
     sum += parseFloat(newAmount);
     return Object.assign({}, item, {
