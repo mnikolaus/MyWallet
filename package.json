@@ -31,7 +31,7 @@
     "webpack": "^3.10.0"
   },
   "dependencies": {
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "numeral": "^2.0.6",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
